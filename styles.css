@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading Page</title>
+    <style>
+        /* Font declarations remain the same */
+        @font-face {
+            font-family: 'Circular Std';
+            src: url('./fonts/CircularStd-Book.woff2') format('woff2'),
+                 url('./fonts/CircularStd-Book.woff') format('woff'),
+                 url('./fonts/CircularStd-Book.otf') format('opentype');
+            font-weight: 450;
+            font-style: normal;
+        }
+
+        /* Add these global text rendering settings */
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: #FAFAF9;
+            font-family: "Circular Std", sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 24px;
+        }
+
+        /* Rest of the CSS remains the same */
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 24px;
+        }
+
+        .loader {
+            width: 32px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: 
+                radial-gradient(farthest-side,#F7615E 94%,#0000) top/3px 3px no-repeat,
+                conic-gradient(#0000 30%,#F7615E);
+            -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 3px),#000 0);
+            animation: l13 1s infinite linear;
+        }
+
+        @keyframes l13{ 
+            100%{transform: rotate(1turn)}
+        }
+
+        h1 {
+            color: var(--text-grey, #2C3E50);
+            text-align: center;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-family: "Circular Std";
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: 46px;
+            letter-spacing: -1px;
+            margin: 0 0 8px 0;
+        }
+
+        p {
+            color: var(--text-grey-light, #657181);
+            text-align: center;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-family: "Circular Std";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: 28px;
+            letter-spacing: -0.2px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="loader-container">
+            <div class="loader"></div>
+        </div>
+        <h1>Hold tight!</h1>
+        <p>We're now preparing your marketplace.</p>
+        <p>This should only take a second...</p>
+    </div>
+</body>
+</html>
